@@ -1,14 +1,7 @@
 Option Explicit
 
 Sub main()
-    Dim ArgCount
-    ArgCount = WScript.Arguments.Count
-    Select Case ArgCount
-    Case 1
-        Call convert
-    Case Else
-        WScript.Echo "Please drag a document or a folder to this vbs script."
-    End Select
+		Call convert
 End Sub
 
 Function FileExists(FilePath)
@@ -22,13 +15,10 @@ Function FileExists(FilePath)
 End Function
 
 Function convert
-    MsgBox "Please ensure documents are saved, if that press 'OK' to continue",,"Warning"
     Dim Args1, TotalFiles
     Args1 = WScript.Arguments(0)
 
     TotalFiles = ProcessFile(Args1)
-
-    WScript.Echo "Total " & TotalFiles & " file(s) converted to PDF."
 End Function
 
 Function ProcessFile(Path)

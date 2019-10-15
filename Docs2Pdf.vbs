@@ -1,7 +1,7 @@
 Option Explicit
 
 Sub main()
-		Call convert
+    Call convert
 End Sub
 
 Function FileExists(FilePath)
